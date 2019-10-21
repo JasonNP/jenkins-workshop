@@ -1,13 +1,12 @@
-
 node{
    
         stage("init"){
-            
             echo "Hello Jason"
-            
-
         }
-
+        stage("checkout"){
+            echo "descargar source github"
+        }
     
 }
+  
   
