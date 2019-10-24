@@ -12,7 +12,7 @@ node{
         stage("checkout"){
             println "===========TODO==========="
             git(
-                branch : master,
+                branch : "master",
                 credentialsId: "jason-github",
                 url: "https://github.com/jasonNP/aks-rbac-example.git"
             )
