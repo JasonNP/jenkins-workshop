@@ -9,7 +9,7 @@ node{
         }
         
         stage("checkout"){
-            PRINTLN "todo"
+            println "todo"
         }
     }
 }
