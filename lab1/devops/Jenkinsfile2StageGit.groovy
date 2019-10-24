@@ -1,22 +1,32 @@
-
 node{
-
-        withEnv(["ENV_CLIENTID=123456789-123456-123456"]){
-            stage("init"){
-                echo "${ENV_CLIENTID}"
-                sh "printenv"
-            }
-
+    withEnv(["ENV_CLIENTID=12345677-123456-123456"]){
+        stage("init"){
+            echo "${ENV_CLIENTID}"
+            sh "printenv"
+            cleanWs()
         }
+    }
+
+    stage("checkout"){
+        println '===== TODO ======'
         
-        stage("checkout"){
-            println "===========TODO==========="
+        sh "mkdir source"
+        dir("source"){
             git(
                 branch : "master",
                 credentialsId: "jason-github",
                 url: "https://github.com/jasonNP/aks-rbac-example.git"
             )
-            sh "ls -lta"
         }
-    }
+        
+        sh "pwd"
+        
+        sh "ls -lta && cd source && ls -lta"
 
+
+    }
+}
+
+// git add .                    
+// git commit -m "cambios"    
+// git push -u origin master
