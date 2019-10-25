@@ -17,7 +17,7 @@ node{
     }
 
     stage("deploy"){
-        docker.image("docker pull hashicorp/terraform:0.12.12").withRun("-version"){
+        docker.image("hashicorp/terraform:0.12.12").withRun("-version"){
             container -> sh "docker logs ${container.id}"
 
         }
